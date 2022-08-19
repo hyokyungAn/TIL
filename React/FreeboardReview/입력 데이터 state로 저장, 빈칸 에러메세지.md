@@ -3,22 +3,34 @@
 ![](https://velog.velcdn.com/images/ahk1106/post/78a0bad9-bcb4-474d-bd9a-ca927406e9ba/image.png)
 
 ⭐️이벤트 핸들러 함수: on으로 시작하는 함수 안에는 event가 들어감
+
 * 작성자나 비밀번호 등 변경이 일어날 때마다 onChange함수가 실행 ➡️ event라는게 들어옴
+* 
  event.target까지 하면 Input태그(어떤 태그를 가리키고 있는지)가 나오고 value하면 그 태그에 들어있는 값을 가지고 옴 ➡️ set~ 해서 state에 저장시켜줌
  
 ![](https://velog.velcdn.com/images/ahk1106/post/9e920021-212c-43e7-82fd-a2013a4bf040/image.png)
+
 * < div >태그로 Error를 넣어줌
-Error메시지가 없는게 아니고 비어있는 상태라 보이지 않을 뿐 존재함 ➡️ Error useState("")
+* Error메시지가 없는게 아니고 비어있는 상태라 보이지 않을 뿐 존재함 ➡️ Error useState("")
 
 ![](https://velog.velcdn.com/images/ahk1106/post/e8b644f5-efb1-4a28-9251-1822077822a5/image.png) 
+
 * writer와 password가 들어가 있는 상태 ➡️ title와 contents는 비어있는 상태이기 때문에 에러메시지를 보여줌
 
 ![](https://velog.velcdn.com/images/ahk1106/post/59954367-3d32-4afe-97c3-5ce242618e49/image.png)
+
 * 등록하기 버튼을 누르면 onClickSubmit함수가 실행 
+
 ➡️ === "" : 빈 문자열일 경우 에러메시지
+
 ➡️ !== "" && : 모두가 빈 문자열이 아닐 경우 alert창을 보여줘
+
 ➡️ && : 그리고(and연산자), || : 또는(or연산자)
 
-![](https://velog.velcdn.com/images/ahk1106/post/6cccc7f3-c1a5-444b-937f-e7e18bcfb178/image.png) ➡️ if문 → 빈 문자열이 찼으면 에러메시지를 지워줘 
+![](https://velog.velcdn.com/images/ahk1106/post/6cccc7f3-c1a5-444b-937f-e7e18bcfb178/image.png) 
+
+➡️ if문 → 빈 문자열이 찼으면 에러메시지를 지워줘 
+
 입력한 값이 event.target.value ➡️ contentsState에 저장
+
 그 값이 비워져 있는 게 아니면(!== "") setContentsError에서 비워줘 
