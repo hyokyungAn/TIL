@@ -1,0 +1,47 @@
+
+### 🌱 게시글 등록 화면, 상세 화면 container, presenter 패턴으로 변경
+
+
+![](https://velog.velcdn.com/images/ahk1106/post/7d2ea905-3ccd-47a2-a1f3-a406df40989f/image.png)
+
+* **props**: 부모가 자식한테 물려주는 변수, 함수, state
+➡️ 그 props를 받아서 다시 자기 자식한테 넘겨주기 가능
+* 부모의 변수나 함수를 그 자식인 → container가 받아서 자기 자식인 → presenter에 주고 → styles 까지 넘겨줄 수 있음. ➡️ props drilling(엄청 중요하진 않음) - 드릴링이 많은게 좋은 방법은 아님.
+* query부분은 컴포넌트 형태로 들어오는 게 아니라 부모 자식관계에 포함되지 않음.
+
+![](https://velog.velcdn.com/images/ahk1106/post/a07de8ef-9b1e-4667-8408-5ed56140e608/image.png)
+
+![](https://velog.velcdn.com/images/ahk1106/post/9d871838-f500-4c7f-aba3-a600dd98357a/image.png)
+ 
+* 파일은 나뉘어져 있지만 실행될 때는 하나로 합쳐서 실행됨.
+➡️ styles에 있는 컴포넌트들이 presenter로 달라 붙고 presenter UI부분이 container에 붙고 그렇게해서 만들어진 컨테이너 부분이 접속페이지에 붙어 전체를 볼 수 있다. 
+
+![](https://velog.velcdn.com/images/ahk1106/post/4de02257-c2b3-4089-848d-139c079bde3f/image.png)
+
+* 기능이 연결된 것은 아니라 기능 연결을 위해 props를 사용
+
+![](https://velog.velcdn.com/images/ahk1106/post/73b6d948-f3a3-47fc-9e2c-b201c5c50800/image.png)
+
+* props를 받을 땐 객체의 이름으로  ➡️ props.aaa || bbb || writer 이런 식으로 써줌
+-매번 이름을 지어줘야 하니깐 그냥 공통된 이름으로 사용하는게 편리
+
+![](https://velog.velcdn.com/images/ahk1106/post/18bf381a-d0b0-4f78-b3b3-3641e91ba408/image.png)
+
+* emotion부분으로도 props를 넘길 수 있다.
+➡️ 작성자 색을 바꾸고 싶을 때: aaa="blue" props를 넘겨주는데 함수가 아니라 받을 곳이 없어 강제로 함수를 만들어줘야 함. 
+→ color: ${(props) => props.aaa}
+
+![](https://velog.velcdn.com/images/ahk1106/post/f659a755-fa37-441c-9819-c414077fc8f5/image.png)
+
+* 부모에서 자식으로 props를 계속 넘겨줄 수 있지만 자식에서 부모는 주지 못함 
+➡️ 리액트의 데이터 흐름: 단방향! 
+
+![](https://velog.velcdn.com/images/ahk1106/post/e86616cb-0b7c-4be6-bdd5-632505efec6b/image.png)
+
+⭐️ 컴포넌트는 여기 저기에서 import할 수 있지만 컴포넌트 안에서 router.query를 사용하게 되는 컴포넌트 같은 경우는 최종적으로 어떤 페이지에서 import 될지 주의해야 함 
+➡️ 작동하지 않을 수도 있음.
+
+
+```
+나두 잘 하고 싶당 ㅠ ㅠ 이해가 왜캐 안 되는지 휴...
+```
