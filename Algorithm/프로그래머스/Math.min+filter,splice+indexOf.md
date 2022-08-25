@@ -1,0 +1,48 @@
+## 제일 작은 수 제거하기
+
+#### 문제
+정수를 저장한 배열 arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수 solution을 완성해주세요. 
+
+단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요. 
+
+예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, [10]면 [-1]을 리턴 합니다.
+
+#### 제한 조건
+* arr은 길이 1 이상인 배열입니다.
+* 인덱스 i, j에 대해 i ≠ j이면 arr[i] ≠ arr[j] 입니다.
+
+#### 입출력 예
+arr	| return
+--  | --
+[4,3,2,1]	| [4,3,2]
+[10] | [-1]
+
+***
+#### solution.js
+
+```javascript
+ if( arr.length === 1 ){
+        return [-1]
+    }
+   let min = 0;
+    min = Math.min(...arr)
+    let result = arr.filter(el => el > min)
+    return result 
+}
+```
+* Math.min() 함수는 주어진 숫자들 중 가장 작은 값을 반환합니다.
+* filter() 메서드는 주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열로 반환합니다.
+
+```javascript
+ if( arr.length === 1 ){
+        return [-1]
+    }
+   let min = 0;
+   min = Math.min(...arr)
+   arr.splice(arr.indexOf(min),1)
+   return arr
+}
+```  
+* splice() 메서드는 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경합니다.
+* indexOf() 메서드는 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고 존재하지 않으면 -1을 반환합니다.
+
