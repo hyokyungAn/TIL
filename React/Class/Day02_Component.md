@@ -30,57 +30,73 @@
 
 <img width="915" alt="스크린샷 2022-10-12 오후 11 49 23" src="https://user-images.githubusercontent.com/104885245/195375469-29809c16-9adb-4a5b-b120-da5fd043a780.png">
 
-#### 컴포넌트는 두가지 유형이 있다.
+### 컴포넌트 만드는 방법 2가지
+-컴포넌트는 함수로밖에 못 만드는 것인가? No! ➡️ 함수형이 존재하기 이전에는 클래스형이 존재(클래스형 컴포넌트)
 
-![](https://velog.velcdn.com/images/ahk1106/post/44f05f58-b737-4e4d-91e2-15c6bffbe957/image.png)
+<img width="908" alt="스크린샷 2022-10-13 오전 2 20 31" src="https://user-images.githubusercontent.com/104885245/195407729-451e7613-2814-4d7e-af3c-28f5d9c55777.png">
 
--function이 하나의 컴포넌트이다 -> 함수형 컴포넌트
+-기존에는 클래스형을 쓰다가 최근에는 함수형으로 넘어가는 추세, 왜 함수형을 쓰는가? ➡️ 코드길이가 짧음 
+* function이 하나의 컴포넌트이다 ➡️ 함수형 컴포넌트
+* 함수형 컴포넌트 ➡️ 화살표 함수로 표현 가능(코드길이가 짧아진다)
 
--함수형 컴포넌트 => 화살표 함수로 표현 가능 (코드길이가 짧아진다)
+-처음부터 쓰지 왜 이제서야 함수형을 쓰는 거야? ➡️ 이후에 use로 사용하는 기능이 생김. (리액트 업데이트)
 
--클래스형과 함수형은 섞어 쓸 수 있다. 
+컴포넌트가 언제 만들어져야하는지 언제 사라져야하는지 데이터를 저장하는 기능들이 가능해지도록 업데이트 됨. ➡️ 앞에 use가 붙은 기능들(hooks)
 
--주로 함수형을 쓰지만 아직도 사용하는 곳이 있어 클래스형도 알아야 한다.
+**Hooks란 **use**State, **use**Effect등 use로 시작하는 애들
 
--클래스형을 함수형으로 변경 가능하다.
+**React-Hooks의 함수형 컴포넌트**: Hooks는 함수형을 클래스형과 동일한 기능을 사용 가능하도록 만들어 줌. 덕분에 함수도 컴포넌트 형태로 사용할 수 있게 됨.
+* 클래스형과 함수형은 섞어 쓸 수 있다. 
+* 클래스형을 함수형으로 변경 가능하다.
 
-처음부터 쓰지 왜 이제서야 함수형을 쓰는 거야? 
-이후에 use로 사용하는 기능(= hooks)이 생겼다. (리액트 업데이트)
-**React-Hooks의 함수형 컴포넌트** :  _Hooks_는 함수형을 클래스형과 동일한 기능을 사용 가능하도록 만들어 준다.덕분에 함수도 컴포넌트 형태로 사용할 수 있게 되었다.
-*Hooks란 **use**State, **use**Effect,... use로 시작하는 기능들
+### State: 컴포넌트 전용 변수
 
-#### state: 컴포넌트 전용 변수
-*setstate: 변수 바꾸기(함수)
-*useState: React component에서 사용하는 변수, State를  만들어준다.
-useState라는 기능이 있어야 변수를 만들 수 있다.
-? 변수는 let, const로 만드는 거 아니었어? 맞아 그런데 컴포넌트에서는 state라는 걸 사용해
+* setState: 변수 바꾸기(함수) 
+* useState: State를 만들어주는 애, React component에서 사용하는 변수
+* useState라는 기능이 있어야 변수를 만들 수 있다.
+
+-변수는 let, const로 만드는 거 아니었어? ➡️ 맞아 그런데 컴포넌트에서는 state라는 걸 사용해
+
 ![](https://velog.velcdn.com/images/ahk1106/post/340993ff-1e92-41e4-acca-5ba22df95f51/image.png)
 
->const[ count, setCount ] = useState(0)
-> 사용법  -> console.log(count)
-> 바꾸는 법-> setCount(1)
+<img width="977" alt="스크린샷 2022-10-13 오전 2 46 50" src="https://user-images.githubusercontent.com/104885245/195412585-fb4e0a2f-43a6-4592-926e-bdbf0527d5f7.png">
 
-*State만 이해하면 document.getElementById().innerText 같은 복잡한 구조는 안 써도 된다. 훨씬 편하기 때문에!
+#### 변수값 변경하는 방법
 
-* React의 State 방식
-react에서는 자바스크립트 변수랑 html이 연결이 되어 있다. 그래서 변수값만 바꾸면 자동으로 html도 같이 바뀐다. 
+<img width="977" alt="스크린샷 2022-10-13 오전 2 48 49" src="https://user-images.githubusercontent.com/104885245/195412950-56ff0784-f738-4820-823f-cb0f2747308a.png">
 
-```
-const [ count, setcount ] = useState(0)
-function zzz(){
-	setCount(count + 1)
-}
-return ( 
- <div>
-    <div>{count}</div>
-    <button onClick={zzz}>카운트 증가!!</button>
- </div>
-)
-```
+-기존 방식이 편한데 이걸 왜 사용할가? ➡️ State만 이해하면 document.getElementById().innerText 같은 복잡한 구조는 안 써도 된다. 훨씬 편하기 때문에!
 
-함수랑 함수형 컴포넌트랑은 다르다.
-->html이 들어가 있으면 컴포넌트 없으면 함수
+<img width="977" alt="스크린샷 2022-10-13 오전 2 52 52" src="https://user-images.githubusercontent.com/104885245/195413692-f4d69f32-6b5a-491c-8d27-679edc6faf5f.png">
 
-{} 안에는 자바스크립트를 넣을 수 있다.
+<img width="977" alt="스크린샷 2022-10-13 오전 2 56 38" src="https://user-images.githubusercontent.com/104885245/195414454-e909d905-1eb7-4394-b297-d173a1d9375a.png">
+
+* react에서는 자바스크립트 변수랑 html이 연결이 되어 있음. 변수값을 바꾸면 자동으로 html도 같이 바뀜.
+* let을 사용하게 되면 리액트 전용 변수가 아니기 때문에 html이 연결되어 있지 않음. 기존 방식을 사용해야 함.  
+
+-함수랑 함수형 컴포넌트랑은 다를까? Yes! ➡️ html이 들어가 있으면 함수형컴포넌트, 없으면 기존에 배운 함수
+
+<img width="977" alt="스크린샷 2022-10-13 오전 3 31 57" src="https://user-images.githubusercontent.com/104885245/195420909-9edf3a01-b0ad-4623-8e72-ecac72bbd74b.png">
+
+* state를 사용하는 이유: 입력값을 예쁘게 포장해놓기 위해
+
+-> 백엔드API(함수)에 포장한 내용을 보내줌 -> DB(엑셀)에 값을 저장.
+
+<img width="895" alt="스크린샷 2022-10-13 오전 3 35 13" src="https://user-images.githubusercontent.com/104885245/195421521-dfb36757-3573-463a-99b9-077802eff739.png">
+
+* onChange={} ➡️ 변경될 때마다 onChange함수 실행
+* onChange, onClick 등 on으로 시작하는 애들은 html과 자바스크립트를 연결시켜 주는 특별한 속성!
+* 입력하면 자동으로 event라는게 들어오게 된다.
+
+<img width="520" alt="스크린샷 2022-10-13 오전 3 45 42" src="https://user-images.githubusercontent.com/104885245/195423479-476e6438-28d4-428f-90d4-b7712695a9ac.png">
+
+* event.target 하면 태그가 가지고 와짐. 어디가 변경돼서 이 함수가 실행이 되었는지 ➡️ 태그전체를 의미
+* event.target.value 하면 값을 가지고 옴
+
+<img width="708" alt="스크린샷 2022-10-13 오전 3 52 51" src="https://user-images.githubusercontent.com/104885245/195424691-83e3b861-3342-4283-8f56-4a7eefd80a96.png">
+
+* 함수를 연결시켜 놓음 ➡️ 바인딩했다 라고 표현(바인드 = 연결)
+* let을 써도 작동하지만 직접적으로 바꾸는 것도 가능, 이런 문제를 막기 위해 실무에선 const 사용.
+* 초기값을 비워두면 아무것도 안 뜨다가 에러시 메시지가 뜸
 
 #### 📌![](https://velog.velcdn.com/images/ahk1106/post/940016c4-80f5-44d8-84df-76567152279b/image.png)
