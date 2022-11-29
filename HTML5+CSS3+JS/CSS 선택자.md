@@ -1,0 +1,226 @@
+## 📌 기본 선택자
+
+### 전체 선택자
+
+<img width="821" alt="스크린샷 2022-11-29 오후 4 06 50" src="https://user-images.githubusercontent.com/104885245/204462666-feb26d1e-3769-497e-8bd3-08de1b1fa753.png">
+
+* *(asterisk): 모든 요소를 선택 
+* 복합 선택자를 통해 어떤 범위 안에 있는 모든 요소를 선택하는 개념으로 간혹 사용
+
+### 태그 선택자
+
+<img width="821" alt="스크린샷 2022-11-29 오후 4 15 08" src="https://user-images.githubusercontent.com/104885245/204464057-3b1bb415-544a-4242-9aec-d828faa16224.png">
+
+* 별 다른 기호 없이 태그 이름만 명시
+
+### 클래스 선택자
+
+<img width="821" alt="스크린샷 2022-11-29 오후 4 19 07" src="https://user-images.githubusercontent.com/104885245/204464631-1efbfff6-0f0e-4728-a4ae-cbcd502ea896.png">
+
+* 태그 종류가 모든 요소를 구분할 만큼 고유한 것이 아니기 때문에 우리가 원하는 것들을 정확히 집어낼 수 있도록 클래스 선택자를 사용 
+* class를 의미하는 .(마침표)를 붙여줘야 함⭐️
+* 중복 가능
+
+### 아이디 선택자
+
+<img width="821" alt="스크린샷 2022-11-29 오후 4 26 36" src="https://user-images.githubusercontent.com/104885245/204465392-a99c2438-94bc-4ba3-8dcf-3df77c4a4696.png">
+
+* 중복 불가
+* 관련 기호: #
+
+## 📌 복합 선택자
+
+### 일치 선택자
+
+<img width="847" alt="스크린샷 2022-11-29 오후 4 29 17" src="https://user-images.githubusercontent.com/104885245/204465911-8e81d8c4-baa8-438e-a898-545499124931.png">
+
+* 각각의 선택자를 붙여서 사용, 동시에 만족
+* 태그 선택자는 기호가 없기 때문에 작성 순서를 바꿀 경우 구분이 되지 않음
+* 일치 선택자를 작성할 때 태그 선택자를 사용해야 한다면 태그 선택자는 맨 앞에 적고 그 다음에 클래스, 아이디 선택자를 사용하는 것이 좋음
+
+### 자식 선택자
+
+<img width="847" alt="스크린샷 2022-11-29 오후 4 35 54" src="https://user-images.githubusercontent.com/104885245/204468655-57dc3de5-7af9-4ef7-988d-0f6085ab25b3.png">
+
+* 선택자를 복합적으로 사용해서 조금더 특정한 요소를 선택할 수 있는 개념
+* ⭐️핵심 특수 기호: >
+* ABC는 XYZ의 부모 요소
+* 해석을 뒤에서부터 하는 것이 좋음 ➡️ ul>.orange: 클래스가 오렌지인 ul태그의 자식 요소
+
+### 하위(후손)선택자
+
+<img width="874" alt="스크린샷 2022-11-29 오후 4 43 02" src="https://user-images.githubusercontent.com/104885245/204468535-844e16ae-53d1-4381-a2bf-67d09cc7d98f.png">
+
+* 선택자 기호: 띄어쓰기 ➡️ 공백문자
+* div .orange: 클래스가 오렌지인 div라는 상위(조상)요소가 있는 요소
+* 자식 선택자보다 하위 선택자를 많이 사용
+    * 자식 선택자는 명확하게 구분할 때 사용
+
+### 인접 형제 선택자
+
+<img width="903" alt="스크린샷 2022-11-29 오후 5 01 28" src="https://user-images.githubusercontent.com/104885245/204472397-12ed553f-9688-47b2-8b79-fb50debfb3e7.png">
+
+* 선택자 기호: +
+* 형제 요소 ➡️ 같은 부모 요소
+* 인접해 있는 형제 요소 하나만 선택 ➡️ **인접 형제 선택자**
+* 복합 선택자는 맨 마지막에 붙어있는 최종 선택자가 찾아지는 개념
+* .orange + li: 오렌지라는 클래스를 가진 li태그의 다음 형제 요소 ➡️ 망고
+
+### 일반 형제 선택자
+
+<img width="903" alt="스크린샷 2022-11-29 오후 4 58 57" src="https://user-images.githubusercontent.com/104885245/204471982-360ec24a-487a-4f81-9c8d-10913a18faf8.png">
+
+* 선택자 기호: ~(틸드)
+* 다음 형제 요소 모두 ➡️ 망고, 사과
+
+## 가상 클래스 선택자: :(콜론)
+
+### HOVER
+
+<img width="869" alt="스크린샷 2022-11-29 오후 7 14 48" src="https://user-images.githubusercontent.com/104885245/204505917-83d393b1-1d41-4ee8-ada4-b65c4ee32a60.png">
+
+* 해당하는 선택자 부분에 마우스를 올리면 그때서야 선택이 되고 선택된 요소에 해당하는 CSS 내용이 적용됨
+
+### ACTIVE
+<img width="849" alt="스크린샷 2022-11-29 오후 7 34 42" src="https://user-images.githubusercontent.com/104885245/204506858-0b762e11-04f3-43e7-a9b3-255c4f150841.png">
+
+* hover와 비슷하지만 마우스 클릭을 유지해야만 동작
+
+### FOCUS
+
+<img width="855" alt="스크린샷 2022-11-29 오후 7 40 35" src="https://user-images.githubusercontent.com/104885245/204508811-0ef9a95f-1d4c-4300-a3ba-3affa8cd95aa.png">
+
+* 포커스가 가능한(사용자에게 데이터를 입력받는) 요소에서만 동작 ➡️ input, select, textarea, a, button, label 등
+* input 창에 커서를 넣으면 활성화되는 개념
+
+<img width="960" alt="스크린샷 2022-11-29 오후 7 50 49" src="https://user-images.githubusercontent.com/104885245/204511884-0ed16cd4-426e-420a-8b78-a81ab3a66ad0.png">
+
+* 포커스가 가능하지 않은 요소를 가능한 형태로 만들려면 해당 요소에 tabindex 속성을 추가 ➡️ tabindex="-1"
+* 포커스는 하나의 페이지에서 한 요소만 가능 ➡️ 포커스가 다른 곳으로 넘어가면 자동으로 포커스 해제
+
+⭐️ hover, active, focus는 js에서 다루는 동작에 관련된 css를 다룰 수 있는 특별한 클래스 선택자
+
+### FIRST-CHILD
+
+<img width="870" alt="스크린샷 2022-11-29 오후 8 06 04" src="https://user-images.githubusercontent.com/104885245/204514986-5d4e7faf-9c28-4763-ab1b-d960d32c2feb.png">
+
+* 형제 요소 중 첫번째, span이라는 태그를 갖고 있는, fruits라는 클래스를 가지고 있는 요소의 후손 ➡️ 딸기
+
+<img width="870" alt="스크린샷 2022-11-29 오후 8 10 51" src="https://user-images.githubusercontent.com/104885245/204515212-94fcaa38-cbc1-4bf3-a984-a1073cf6981b.png">
+
+* 조건에 해당하는 요소가 없으므로 아무것도 선택되지 않음
+
+### LAST-CHILD
+
+<img width="870" alt="스크린샷 2022-11-29 오후 8 16 29" src="https://user-images.githubusercontent.com/104885245/204517033-9b4a585e-294c-4014-8292-050871945818.png">
+
+* 형제 요소 중 막내, h3 요소인, fruits라는 클래스를 가지고 있는 요소의 후손 ➡️ 사과
+
+### NTH-CHILD(N)
+
+<img width="870" alt="스크린샷 2022-11-29 오후 8 18 51" src="https://user-images.githubusercontent.com/104885245/204518669-6b2cee35-61e8-4971-9cfa-fd9e92b2304f.png">
+
+* 2번째 형제 요소, 클래스가 fruits인 요소의 하위 요소들 모두 ➡️ 수박
+* *(전체 선택자): 모든 요소 선택, 단독으로 사용되지 않고 복합 선택자를 통해 다른 선택자와 혼합해서 사용
+
+<img width="870" alt="스크린샷 2022-11-29 오후 8 36 18" src="https://user-images.githubusercontent.com/104885245/204519134-5ce17070-5075-4248-9ec9-dd7734996571.png">
+
+* 짝수번째 요소 선택 개념
+
+<img width="889" alt="스크린샷 2022-11-29 오후 8 37 53" src="https://user-images.githubusercontent.com/104885245/204519409-12733f9f-b588-4058-9254-d2d2bee5ba2a.png">
+
+* 홀수번째 요소 선택 개념
+
+<img width="889" alt="스크린샷 2022-11-29 오후 8 39 04" src="https://user-images.githubusercontent.com/104885245/204519721-e2cdff47-93fc-49c5-8e79-0a8627c7b7b4.png">
+
+* n이라는 키워드를 이용해서 다양하게 요소를 선택할 수 있는 개념 제공
+
+## 부정 선택자 
+
+### NOT
+
+<img width="815" alt="스크린샷 2022-11-29 오후 8 40 55" src="https://user-images.githubusercontent.com/104885245/204520193-92badbc1-037e-4eb5-aee3-b1bfe88e7030.png">
+
+* ()괄호 안에 있는 선택자가 아닌!
+* .fruits *:not(span): span이라는 선택자가 아닌 모든 것, fruits라는 클래스를 가진 요소의 하위 요소 ➡️ 오렌지, 망고, 사과
+
+## 가상 요소 선택자: ::(콜론 2개)
+
+### BEFORE
+
+<img width="861" alt="스크린샷 2022-11-29 오후 8 46 49" src="https://user-images.githubusercontent.com/104885245/204521642-e609ded5-e3dc-4149-8a83-900aedfd697a.png">
+
+* **가상의 인라인 요소를 만들어서** 내부의 앞쪽에 내용 삽입
+
+### AFTER
+
+<img width="861" alt="스크린샷 2022-11-29 오후 8 52 04" src="https://user-images.githubusercontent.com/104885245/204521968-52765bbb-e07d-4d3f-a276-794ebee94624.png">
+
+⭐️ before, after는 요소를 삽입해야되는 선택자이기 때문에 요소의 내용이 무엇인지 무조건 명시해줘야 함 ➡️ 내용 명시 CSS 속성: content
+⭐️⭐️⭐️ 가상 요소 선택자를 사용할 때는 content라는 속성을 사용 (하나의 세트) - content를 작성하지 않을 경우 아무 것도 적용 되지 않음, 사용하지 않더라도 추가해야함
+
+<img width="861" alt="스크린샷 2022-11-29 오후 9 06 09" src="https://user-images.githubusercontent.com/104885245/204524826-bd69bf8d-f996-4324-a5fd-2c87787c1f1b.png">
+
+* before, after 가상 요소는 **인라인 요소**로 가로 세로 값을 지정해도 적용되지 않음
+* 블록 요소로 전환해주는 속성 ➡️ `display:block;`
+
+⭐️ 가상의 요소를 사용해서 CSS에서 제어를 하면 HTML의 구조를 조금 더 단순하게 만들고 덜 복잡하게 작성할 수 있어 유용
+
+## 속성 선택자: []
+
+### ATTR
+
+<img width="861" alt="스크린샷 2022-11-29 오후 9 33 11" src="https://user-images.githubusercontent.com/104885245/204530470-68b20440-9adf-4508-a536-1214af7fdcf7.png">
+
+<img width="861" alt="스크린샷 2022-11-29 오후 9 36 25" src="https://user-images.githubusercontent.com/104885245/204531026-9cdf4100-f1b2-4bbc-a68d-c0c5aaf67dbf.png">
+
+* disabled와 같은 특이한 속성을 가진 요소를 찾는데는 적합
+* input의 type과 같은 일반적으로 가지고 있는 속성을 기준으로 어떤 요소를 특정해서 찾기에는 단순하게 이름만 명시하는 속성 선택자는 유용하지 않음
+
+### ATTR=VALUE
+
+<img width="861" alt="스크린샷 2022-11-29 오후 9 41 36" src="https://user-images.githubusercontent.com/104885245/204532011-64e7f903-904f-4640-9af7-cf1d463e8278.png">
+
+* 내가 원하는 요소를 정확하게 찾을 수 있음
+
+## 스타일 상속
+
+<img width="948" alt="스크린샷 2022-11-29 오후 9 57 55" src="https://user-images.githubusercontent.com/104885245/204536530-1b7bf871-8e8a-480c-9348-9bec172c64ff.png">
+
+* animal이라는 클래스를 가지고 있는 요소에 css 내용을 적용했을 때 적용된 내용이 해당하는 요소의 자식 요소, 더 나아가 기타 하위 요소들까지 영향을 미치는 것
+
+<img width="948" alt="스크린샷 2022-11-29 오후 10 04 25" src="https://user-images.githubusercontent.com/104885245/204536691-04830966-4f71-4961-961b-1c7769328571.png">
+
+### 강제 상속: inherit
+
+<img width="1008" alt="스크린샷 2022-11-29 오후 10 18 03" src="https://user-images.githubusercontent.com/104885245/204540153-a8c0330d-5725-4f7d-9005-bcdbc14235fd.png">
+
+* 자동으로 상속되지 않는 다양한 속성들에 inherit이라는 값을 통해 부모 요소가 가지고 있는 특정한 속성의 값을 강제적으로 상속시켜서 적용할 수 있음
+
+* 자동으로 상속되지 않는 다양한 속성들에 inherit이라는 값을 통해 부모 요소가 가지고 있는 특정한 속성의 값을 강제적으로 상속시켜서 적 ㅅㅜ ㅇ
+
+## 선택자 우선 순위
+
+* **우선 순위**: 같은 요소가 여러 선언의 대상이 된 경우, 어떤 선언이 CSS 속성을 우선 적용할 지 결정하는 방법
+ 1. 점수가 높은 선언이 우선
+ 2. 점수가 같으면, 가장 마지막에 해석된 선언이 우선
+
+<img width="1008" alt="스크린샷 2022-11-29 오후 10 48 13" src="https://user-images.githubusercontent.com/104885245/204554329-37081438-5924-4e6e-bf8c-64fdb1f37575.png">
+
+* 스타일이라는 전역 속성을 통해서 별도의 선택자를 명시하지 않고도 CSS 내용을 해당 요소에 직접적으로 명시: 인라인 선언 방식 ➡️ 1000점
+*  !important: 더욱 중요함(중요도), 무한
+* 상속은 점수를 별도로 계산하지 않음
+* CSS 우선수위의 점수를 계산하는 것을 **명시도**라고 함
+
+<img width="1008" alt="스크린샷 2022-11-29 오후 11 08 29" src="https://user-images.githubusercontent.com/104885245/204550971-d098a5b6-63ae-49e0-9513-20fe28df46a1.png">
+
+* 부정 선택자는 가상 클래스이긴 하지만 점수로 계산하지 않음
+* 선언 순서가 달라지더라도 결과는 달라지지 않음 ➡️ 계산된 점수가 더 높은 css 내용이 적용되기 때문에
+* 아이디 선택자는 고유해야하기 때문에 자주 사용하지 않음
+* 인라인 방식을 통해 작성한 css 내용은 별도의 css파일에서 수정 불가능, 우선 순위 점수가 쓸데없이 너무 높아(1000점) 되도록이면 사용하지 않는 것이 좋음
+*  !important를 사용하면 이길 수 있지만 되도록 사용하지 않는 것을 권장, 어쩔 수 없는 부분에 극히 일부분 사용
+* 수정이 불가능해 계속  !important를 붙여줘야 하는 악순환 발생
+
+<img width="197" alt="스크린샷 2022-11-29 오후 11 29 25" src="https://user-images.githubusercontent.com/104885245/204556090-5c45af01-4010-44c8-8cbc-96949f949120.png">
+
+* 우선 순위 점수가 늘어나는 순서대로 기억하기⭐️
