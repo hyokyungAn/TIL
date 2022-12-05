@@ -1,3 +1,13 @@
+## Optional-Chaining vs Nullish-coalescing
+
+* Optional-Chaining: 조건부 렌더링(화면에 그리기)을 도와주는 연산자로 다른 조건부 렌더링 연산자를 더욱 간결하게 만들어서 사용하기 위해 탄생(ES11문법)
+
+1. 삼항 연산자
+2. && 연산자
+3. 옵셔널 체이닝(optional-chaining)
+
+* Nullish-coalescing: 옵셔널 체이닝 처럼 많이 사용하는 것은 아니지만, 같은 ES11문법에서 나온 앞에가 null과 undefined일때만 렌더해주는 연산자
+
 ## Container, Presenter
 
 <img width="788" alt="스크린샷 2022-12-05 오후 10 34 05" src="https://user-images.githubusercontent.com/104885245/205660914-4cddec20-0659-4302-bc6a-cde2ea702941.png">
