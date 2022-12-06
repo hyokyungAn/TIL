@@ -109,4 +109,17 @@ router.query = { aaa: 1} 이런 형식으로 들어가게 되면서 자동으로
 
 ### 템플릿 리터럴
 
-<img width="987" alt="스크린샷 2022-11-15 오전 3 39 44" src="https://user-images.githubusercontent.com/104885245/201740881-9dc981e0-6bd8-4ba9-9e30-e8a4a8c87ac7.png">
+<img width="639" alt="스크린샷 2022-12-06 오후 10 08 06" src="https://user-images.githubusercontent.com/104885245/205921113-b733935a-acfa-4206-a7bd-7eee3e7ad4a5.png">
+
+* +로 되어 있는 부분을 하나로 합쳐서 코드를 간단하고 읽기 쉽게 만들어 줌
+
+<img width="726" alt="스크린샷 2022-12-06 오후 10 08 35" src="https://user-images.githubusercontent.com/104885245/205921821-a59dae0d-61e2-47a6-bee8-b14b52605237.png">
+
+* `백틱으로 전체를 감싸준 후 자바스크립트 부분을 ${}로 묶어줌 ➡️ 이러한 방식을 **템플릿 리터럴** 이라고 함
+
+## try~catch
+
+<img width="821" alt="스크린샷 2022-12-06 오후 10 23 06" src="https://user-images.githubusercontent.com/104885245/205925144-0d877c75-7bdf-4fe5-90ee-bc89a58e46ba.png">
+
+* 요청시 무조건 성공하면 좋지만 실패할 수도 있기 때문에 시도를 해줘야 함(try), 시도했는데 실패했을 경우 잡아줘야 함(catch), 어떤 이유로 실패했는지 에러메시지가 담김(error)
+* try안에서 한줄 한줄 실행 → 첫 줄 실행하면서 요청이 나감 → 백엔드에서 문제가 발생하면 error가 들어옴 → 아랫줄 다 무시(실행X)하고 catch로 바로 넘어감
