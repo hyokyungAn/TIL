@@ -1,12 +1,36 @@
-## Optional-Chaining vs Nullish-coalescing
+## Optional-Chaining
 
-* Optional-Chaining: 조건부 렌더링(화면에 그리기)을 도와주는 연산자로 다른 조건부 렌더링 연산자를 더욱 간결하게 만들어서 사용하기 위해 탄생(ES11문법)
+<img width="415" alt="스크린샷 2022-12-06 오후 9 23 39" src="https://user-images.githubusercontent.com/104885245/205911742-a2cfc4c3-9370-4d71-b66a-52051a656ec0.png">
 
-1. 삼항 연산자
-2. && 연산자
-3. 옵셔널 체이닝(optional-chaining)
+* 조건부 렌더링(화면에 그리기)을 도와주는 연산자로 다른 조건부 렌더링 연산자를 더욱 간결하게 만들어서 사용
 
-* Nullish-coalescing: 옵셔널 체이닝 처럼 많이 사용하는 것은 아니지만, 같은 ES11문법에서 나온 앞에가 null과 undefined일때만 렌더해주는 연산자
+```js
+data && data.fetchProfile 
+// data가 true이면 뒤에거(data.fetchProfile)가 보여지고 false이면 앞에거(data)가 보여짐!! 보이지 않을 경우는 undefined이기 때문
+// * 숫자 0일 경우 true가 아니기 때문에 data(숫자0)가 보여짐
+
+data || data.fetchProfile
+// data가 false이면 data.fetchProfile, true이면 data가 보여짐
+
+// 두 개가 반대의 관계에 있음
+```
+
+### 거짓
+
+<img width="415" alt="스크린샷 2022-12-06 오후 9 40 50" src="https://user-images.githubusercontent.com/104885245/205915655-c2eb973f-f403-4411-810a-86541442d079.png">
+
+* if문 안에 들어가는 것은 거짓과 참 둘 중 하나
+* 뭐라고 입력했던 간에 거짓과 참 둘 중 하나로 변경돼서 최종 실행될지 말지 판단
+
+## Nullish-coalescing
+
+```js
+data ?? data.fetchProfile 
+```
+
+*  앞에가 거짓이면 뒤에거 보여줘 ➡️ 거짓 중에서도 **null과 undefined**일때만
+*  data가 0일 경우 비어있는 건 아니기 때문에 해당하지 않음
+*  가끔 쓰임
 
 ## Container, Presenter
 
