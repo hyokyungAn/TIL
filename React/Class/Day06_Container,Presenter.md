@@ -64,4 +64,5 @@ data ?? data.fetchProfile
 
 ⭐️ 리액트에서 데이터 흐름은 **단방향 구조**(흐름 명확), 부모에서 자식으로밖에 데이터가 못 내려감, 자식 → 부모 ❌ 
 
-🔅 <img width="553" alt="스크린샷 2022-12-07 오후 4 22 14" src="https://user-images.githubusercontent.com/104885245/206114308-e17217b6-aa0d-44c5-bf6a-3d74cce1ab24.png">
+____
+<img width="553" alt="스크린샷 2022-12-07 오후 4 22 14" src="https://user-images.githubusercontent.com/104885245/206114308-e17217b6-aa0d-44c5-bf6a-3d74cce1ab24.png">
