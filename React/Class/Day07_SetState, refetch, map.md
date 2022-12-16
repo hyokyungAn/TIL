@@ -62,3 +62,70 @@
 <img width="852" alt="스크린샷 2022-12-07 오후 9 53 35" src="https://user-images.githubusercontent.com/104885245/206184664-bad44acb-aa1b-4371-b3fe-ff4082686642.png">
 
 * 다시 빈칸이 생겼을 때 버튼색이 원래대로 돌아오게 해줌 ➡️ setIsActive(false)
+
+## Map: 목록 형태의 데이터를 화면에 뿌려주는 것
+
+<img width="1213" alt="스크린샷 2022-12-16 오후 6 54 04" src="https://user-images.githubusercontent.com/104885245/208072694-529ef058-23ae-458c-b4ca-4ba6464d0320.png">
+
+* 배열이 html부분에 나타날 수 있음! ➡️ react전용 html인 JSX에서 가능한 것
+
+<img width="1215" alt="스크린샷 2022-12-16 오후 7 00 19" src="https://user-images.githubusercontent.com/104885245/208073652-cbb05c68-4022-4f12-a6be-e1db7265755e.png">
+
+* 실무에서는 for문은 복잡해서 많이 사용하지 않음 ➡️ map, filter를 많이 사용(상황에 따라 다름)
+
+<img width="1215" alt="스크린샷 2022-12-16 오후 7 06 10" src="https://user-images.githubusercontent.com/104885245/208077821-09c41f09-baae-49aa-991a-6c8264335e4a.png">
+
+* aaa, bbb, ccc는 결국 다 같음 ➡️ map을 사용해서 쉽게 화면에 나타낼 수 있다!
+
+<img width="1210" alt="스크린샷 2022-12-16 오후 7 39 25" src="https://user-images.githubusercontent.com/104885245/208080631-b82e1f79-e34b-4a55-9785-1ad196be06b6.png">
+
+* ccc에 담아서 보여주나 바로 보여주나 동일
+
+<img width="1215" alt="스크린샷 2022-12-16 오후 7 35 37" src="https://user-images.githubusercontent.com/104885245/208080177-b4e50297-79c2-43d5-b5b7-95b0acfd42e1.png">
+
+### ⭐️key
+
+<img width="398" alt="스크린샷 2022-12-16 오후 8 49 54" src="https://user-images.githubusercontent.com/104885245/208092818-58c24820-3fa3-4a30-b40f-d50b0ab03c92.png">
+
+* fetchBoard에서 받아온 데이터 갯수가 배열 안에 10개가 들어있기 때문에 map안에서 함수가 10번 실행
+* 구분을 못하겠으니 유일한 키값을 넣어주라는 경고 메시지
+* 키 값을 넣지 않으면 체크 후 데이터를 삭제해도 체크가 해제되지 않는 에러 발생
+
+<img width="959" alt="스크린샷 2022-12-16 오후 8 53 54" src="https://user-images.githubusercontent.com/104885245/208093479-eb23f15f-be02-4267-9e46-b3f8c1aa6669.png">
+
+* 바깥 태그에 key를 넣어줘야 함
+* 구분을 위해 고유한 number나 id값을 사용(중복❌)
+
+<img width="429" alt="스크린샷 2022-12-16 오후 9 03 33" src="https://user-images.githubusercontent.com/104885245/208094261-f36cf62e-ca4e-4849-9159-ce5fc7bffa6e.png">
+
+* map에는 두번째 값에 index라는게 들어옴 
+* 몇 번째에 실행되는 건지 실행되는 순서에 따라서 바뀌어 들어옴
+* 중복되지 않음
+
+<img width="661" alt="스크린샷 2022-12-16 오후 9 05 00" src="https://user-images.githubusercontent.com/104885245/208094440-97246671-a83f-4b54-bccf-7caa19e06a26.png">
+
+🙋🏻‍♀️ 그러면 key값을 index로 줘도 될까? No!!! ➡️ 삭제돼도 아래 있던 글이 위로 올라오면서 기존에 삭제된 key값이 계속 유지됨
+
+## refetch
+
+<img width="950" alt="스크린샷 2022-12-16 오후 8 22 13" src="https://user-images.githubusercontent.com/104885245/208088434-c5cced4c-dc29-4f79-835d-1779b1b6e97f.png">
+
+* 삭제 버튼을 클릭하면 onClickDelete함수 실행 → event.target.id하면 ➡️ el.number해서 number값이 들어감
+* 삭제하는 mutation을 요청 → 어떤 게시물을 삭제할 것 작성해줘야 함 ➡️ `number: event.target.id` 입력
+* event.target.id는 text(html에서 가지고 온 내용)이기 때문에 숫자로 바꿔줘야 함 ➡️ `Number(event.target.id)`
+
+<img width="725" alt="스크린샷 2022-12-16 오후 7 48 11" src="https://user-images.githubusercontent.com/104885245/208083611-8b9bbe07-eac0-4f39-bb0f-fe0f205eca68.png">
+
+* 삭제 버튼을 클릭하면 → 백엔드 API로 요청 → 데이터 베이스 컴퓨터에 저장된 엑셀의 해당 데이터 삭제 → 응답을 돌려줌 → 변화없음
+* 화면에는 변화가 없지만 엑셀은 삭제된 상태 ➡️ 동기화가 되어 있지 않기 때문 일치하지 않음
+* 이때 처음 fetchBoard를 해서 화면에 10개를 그려왔는데 다시 **"refetch"**해서 엑셀에 있는 업데이트된 10개를 꺼내와야 함
+
+<img width="1211" alt="스크린샷 2022-12-16 오후 7 55 33" src="https://user-images.githubusercontent.com/104885245/208084544-62bbffa5-7a63-4937-84cf-37c86f9c7e6e.png">
+
+* 삭제하고 끝나면 다시 가져와줘~ ➡️ `refetchQueries`
+* data가 바뀌고 변경된 내용으로 다시 그려짐
+
+<img width="686" alt="스크린샷 2022-12-16 오후 9 12 11" src="https://user-images.githubusercontent.com/104885245/208095632-fc139e78-2a15-484f-a84d-2e34f7382314.png">
+
+* < Fragment >는 < > 빈태그와 같지만 빈태그에는 key값을 줄 수가 없음
+* key값을 주고 싶을 땐 < Fragment > 사용
