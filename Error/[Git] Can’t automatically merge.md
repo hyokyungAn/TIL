@@ -14,7 +14,7 @@
 
 > `git pull`
 
-> `git checkout 작업중인 브랜치 이름`
+> `git checkout 작업 중인 브랜치 이름`
 
 > `git merge master`
 
@@ -27,8 +27,10 @@ Conflict가 발생한 파일을 열어보면,  <<<<< HEAD, ======, >>>>> master 
 수정한 코드를 
 
 > `git add 변경한 파일`
-> `git commit -m
-> `git push origin branch_name`
+
+> `git commit -m`
+
+> `git push origin 작업 중인 브랜치 이름`
 
 이렇게 해서 해결했다!
 
